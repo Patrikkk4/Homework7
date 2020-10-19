@@ -1,0 +1,48 @@
+﻿<Window x:Name="mAinform" x:Class="Diary.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        xmlns:local="clr-namespace:Diary"
+        mc:Ignorable="d"
+        Title="Дневник" Height="645" Width="945" MinWidth="945" MinHeight="645" MaxWidth="945" MaxHeight="645" WindowStartupLocation="CenterScreen" Closing="MainWindow_ProgramClosing">
+    <Grid x:Name="diaryMain" Margin="0,0,2,0">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="7*"/>
+            <ColumnDefinition Width="224*"/>
+            <ColumnDefinition Width="88*"/>
+            <ColumnDefinition Width="92*"/>
+            <ColumnDefinition Width="157*"/>
+            <ColumnDefinition Width="98*"/>
+            <ColumnDefinition Width="269*"/>
+        </Grid.ColumnDefinitions>
+        <Label x:Name="lblDataText" Content="Введите дату и время события" HorizontalAlignment="Left" VerticalAlignment="Top" RenderTransformOrigin="0.463,0.553" Margin="0,29,0,0" Width="207" FontSize="14" Height="29" Grid.Column="1"/>
+        <TextBox x:Name="txbNameHappening" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="279" Margin="10,58,0,0" Grid.Column="3" Grid.ColumnSpan="3"/>
+        <Label x:Name="lblName" Content="Введите название события" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="55,30,0,0" Width="193" Height="26" Grid.Column="3" Grid.ColumnSpan="2" FontSize="14"/>
+        <Label x:Name="lblPhoneNumber" Content="Введите номер телефона если необходимо" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="72,30,0,0" Height="26" Width="288" Grid.Column="5" FontSize="14" Grid.ColumnSpan="2"/>
+        <TextBox x:Name="txbPhoneNumber" HorizontalAlignment="Left" Height="25" TextWrapping="Wrap" VerticalAlignment="Top" Width="252" Margin="7,58,0,0" Grid.Column="6"/>
+        <TextBox x:Name="txbHappening" HorizontalAlignment="Left" Height="28" TextWrapping="Wrap" VerticalAlignment="Top" Width="915" Margin="0,151,0,0" Grid.Column="1" Grid.ColumnSpan="6" MaxLength="140"/>
+        <Label x:Name="lblHappening" Content="Введите описание события. Максимум 140 символов" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="0,120,0,0" Width="359" Height="26" Grid.Column="1" Grid.ColumnSpan="3" FontSize="14"/>
+        <Button x:Name="btnEnter" Content="Добавить" HorizontalAlignment="Left" VerticalAlignment="Top" Width="102" Grid.Column="2" Margin="2,186,0,0" Height="40" Click="BtnEnter_Click" Grid.ColumnSpan="2"/>
+        <ComboBox x:Name="cmbPriority" HorizontalAlignment="Left" VerticalAlignment="Top" Width="186" Margin="5,205,0,0" Height="22" Grid.Column="1"/>
+        <DatePicker x:Name="ChouseDate" x:FieldModifier="public" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="179" Grid.Column="1" Margin="17,58,0,0" SelectedDateFormat="Short"/>
+        <Button x:Name="openFile" Content="Импорт файла" HorizontalAlignment="Left" VerticalAlignment="Top" Width="102" Grid.Column="4" Margin="143,186,0,0" Height="40" Click="openFile_Click" Grid.ColumnSpan="2"/>
+        <Label x:Name="lblStatus" Content="Выберите приоритет" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="1" Margin="5,179,0,0" Width="150" Height="26" FontSize="14"/>
+        <DataGrid x:Name="table" HorizontalAlignment="Left" Height="338" VerticalAlignment="Top" Width="914" Margin="1,257,0,0" Grid.ColumnSpan="6" AutoGenerateColumns="True"
+                  AutoGeneratingColumn="table_AutoGeneratingColumn" Grid.Column="1" CanUserAddRows="False" CanUserResizeColumns="False"
+                  SelectedCellsChanged="table_CheckCell" LoadingRow="table_CheckRows">
+        </DataGrid>
+        <Button x:Name="btnSave" Content="Сохранить" Grid.Column="3" HorizontalAlignment="Left" Margin="21,186,0,0" VerticalAlignment="Top" Width="102" Height="40" Click="BtnSave_Click" Grid.ColumnSpan="2"/>
+        <Label x:Name="lblSaved" Content="" VerticalAlignment="Top" Margin="7,231,25,0" Grid.Column="3" Height="26" Grid.ColumnSpan="2"/>
+        <Button x:Name="btnClean" Content="Очистить все" HorizontalAlignment="Left" VerticalAlignment="Top" Width="102" Grid.Column="4" Margin="36,186,0,0" Height="40" Click="BtnClean_Click"/>
+        <xctk:TimePicker x:Name="ChouseTime" x:FieldModifier="public" HorizontalAlignment="Left" VerticalAlignment="Top" Height="25" Width="75" 
+                         Grid.Column="1" Margin="196,58,0,0" Grid.ColumnSpan="2"/>
+        <Button x:Name="btnExport" Content="Экспорт в файл&#xa;        xls; xlsx" HorizontalAlignment="Left" VerticalAlignment="Top" Width="102" 
+                Grid.Column="5" Margin="93,186,0,0" Height="40" Click="BtnExport_Click" Cursor="Arrow" Grid.ColumnSpan="2"/>
+        <Label x:Name="lblChoused" Content="Экспортировать все" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Column="5" Margin="54,230,0,0" Width="126" RenderTransformOrigin="0.482,1.423" Height="26" Grid.ColumnSpan="2"/>
+        <CheckBox x:Name="cbxExportAll" Content="CheckBox" HorizontalAlignment="Left" VerticalAlignment="Top" 
+                  Grid.Column="6" Margin="83,237,0,0" Width="16" RenderTransformOrigin="1.25,0.333" Height="15" />
+
+    </Grid>
+</Window>

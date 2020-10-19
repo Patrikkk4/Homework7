@@ -1,0 +1,14 @@
+﻿<Window x:Class="Diary.AlarmWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="Внимание" Height="160" Width="364" MaxWidth="368" MaxHeight="160" MinWidth="364" MinHeight="160" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Button x:Name="btnConfirm" Content="Продолжить" HorizontalAlignment="Left" VerticalAlignment="Top" Width="84" Margin="87,71,0,0" Height="34" Click="BtnConfirm_Click"/>
+        <Button x:Name="btnCansel" Content="Отмена" HorizontalAlignment="Left" VerticalAlignment="Top" Width="84" Margin="185,71,0,0" Height="34" Click="BtnCansel_Click"/>
+        <Label x:Name="lblAlarm" Content="Это действие удалит ВСЕ сохраненные записи" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="46,24,0,0" Width="266"/>
+
+    </Grid>
+</Window>
